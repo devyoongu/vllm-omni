@@ -1,0 +1,36 @@
+services:
+  vllm-qwen3-tts:
+    image: vllm-omni:custom
+    container_name: vllm-qwen3-tts
+    runtime: nvidia
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=1
+      # --- 가속 엔진 및 병목 제거 설정 ---
+      - VLLM_USE_V1=1
+      - VLLM_ATTENTION_BACKEND=FLASHINFER
+    volumes:
+      - /home/yh.ahn/qwen3-tts:/app/models
+      - /home/yh.ahn/tts_test/custom_voices:/app/custom_voices
+    ports:
+      - "30000:30000"
+    command:
+      - "/app/models/Qwen3-TTS-12Hz-1.7B-CustomVoice"
+      - "--omni"
+      - "--trust-remote-code"
+      - "--max-model-len"
+      - "1024"
+      - "--dtype"
+      - "bfloat16"
+      - "--gpu-memory-utilization"
+      - "0.85"
+      - "--host"
+      - "0.0.0.0"
+      - "--port"
+      - "30000"
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              device_ids: ['1'] # 물리 GPU 1번(A6000)을 명시적으로 예약
+              capabilities: [gpu]
