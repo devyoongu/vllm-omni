@@ -10,6 +10,8 @@ services:
       - VLLM_ATTENTION_BACKEND=FLASHINFER
       # HuggingFace 캐시 경로 (Dockerfile ENV 및 볼륨 마운트와 일치)
       - HF_HOME=/root/.cache/huggingface
+      # Code2Wav stage가 코덱 스트리밍을 위해 max_position_embeddings(32768) 초과 필요
+      - VLLM_ALLOW_LONG_MAX_MODEL_LEN=1
     volumes:
       # HuggingFace 캐시 디렉토리를 컨테이너 안으로 마운트
       - /home/posicube/.cache/huggingface:/root/.cache/huggingface
