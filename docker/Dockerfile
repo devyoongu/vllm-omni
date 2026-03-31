@@ -17,5 +17,8 @@ COPY . .
 # vllm-omni 설치 시 버전 감지 에러를 방지하기 위해 임시 버전 환경변수 설정
 ENV SETUPTOOLS_SCM_PRETEND_VERSION=0.1.0
 
+# HuggingFace 캐시 경로 지정 (docker-compose 볼륨 마운트 경로와 일치)
+ENV HF_HOME=/root/.cache/huggingface
+
 # vLLM-Omni 소스 설치
 RUN pip install --no-cache-dir -e .

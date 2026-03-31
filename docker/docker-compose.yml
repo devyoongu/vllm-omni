@@ -4,17 +4,19 @@ services:
     container_name: vllm-qwen3-tts
     runtime: nvidia
     environment:
-      - NVIDIA_VISIBLE_DEVICES=1
+      - NVIDIA_VISIBLE_DEVICES=0  # RTX 3090은 GPU 0번
       # --- 가속 엔진 및 병목 제거 설정 ---
       - VLLM_USE_V1=1
       - VLLM_ATTENTION_BACKEND=FLASHINFER
+      # HuggingFace 캐시 경로 (Dockerfile ENV 및 볼륨 마운트와 일치)
+      - HF_HOME=/root/.cache/huggingface
     volumes:
-      - /home/yh.ahn/qwen3-tts:/app/models
-      - /home/yh.ahn/tts_test/custom_voices:/app/custom_voices
+      # HuggingFace 캐시 디렉토리를 컨테이너 안으로 마운트
+      - /home/posicube/.cache/huggingface:/root/.cache/huggingface
     ports:
       - "30000:30000"
     command:
-      - "/app/models/Qwen3-TTS-12Hz-1.7B-CustomVoice"
+      - "Qwen/Qwen3-TTS-12Hz-1.7B-Base"  # HF hub ID 사용 (캐시 마운트로 오프라인 로드)
       - "--omni"
       - "--trust-remote-code"
       - "--max-model-len"
@@ -32,5 +34,5 @@ services:
         reservations:
           devices:
             - driver: nvidia
-              device_ids: ['1'] # 물리 GPU 1번(A6000)을 명시적으로 예약
+              device_ids: ['0']  # RTX 3090 (GPU 0)
               capabilities: [gpu]
