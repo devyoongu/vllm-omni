@@ -89,7 +89,7 @@ docker build -f docker/Dockerfile -t vllm-omni:custom .
 
 ```bash
 cd ~/tts/vllm-omni
-docker compose -f docker/docker-compose.yml up -d
+docker-compose -f docker/docker-compose.yml up -d
 ```
 
 ### 로그 확인
@@ -166,10 +166,10 @@ curl -X POST http://localhost:30000/v1/audio/voices \
 
 ```bash
 # 중지
-docker compose -f docker/docker-compose.yml down
+docker-compose -f docker/docker-compose.yml down
 
 # 재시작 (이미지 재빌드 없이)
-docker compose -f docker/docker-compose.yml up -d
+docker-compose -f docker/docker-compose.yml up -d
 ```
 
 ---
@@ -181,9 +181,9 @@ cd ~/tts/vllm-omni
 git pull
 
 # 소스가 변경된 경우 이미지 재빌드 필요
-docker compose -f docker/docker-compose.yml down
+docker-compose -f docker/docker-compose.yml down
 docker build -f docker/Dockerfile -t vllm-omni:custom .
-docker compose -f docker/docker-compose.yml up -d
+docker-compose -f docker/docker-compose.yml up -d
 
 # voice 재등록 (컨테이너 재시작으로 초기화됨)
 curl -X POST http://localhost:30000/v1/audio/voices \
