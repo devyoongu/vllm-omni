@@ -7,9 +7,11 @@ TTS 순차 처리 테스트 — 100개 문장을 하나씩 순서대로 처리
   3. 전체 완료 후 요약 출력
 
 Usage:
-    python tests/test_sequential_tts.py
+    python tests/test_sequential_tts.py                    # 전체 150개
+    python tests/test_sequential_tts.py --from 101         # 101번부터 끝까지
+    python tests/test_sequential_tts.py --from 101 --to 150  # 101~150번
+    python tests/test_sequential_tts.py --from 1 --to 50   # 1~50번
     python tests/test_sequential_tts.py --out-dir /tmp/tts_out
-    python tests/test_sequential_tts.py --count 20        # 앞 20개만
 
 Requirements:
     pip install httpx
@@ -160,9 +162,60 @@ SENTENCES = [
     "고객님의 제품 모델명은 제품 전면 스티커에서 확인하실 수 있습니다.",
     "서비스 접수 후 진행 상황은 앱 푸시 알림으로 실시간 안내됩니다.",
     "오늘 상담 내용은 고객님의 계정에 자동 저장되어 다음 문의 시 활용됩니다.",
+    # 101~150
+    "보일러 점화 버튼을 3초 이상 누르면 초기화 모드로 진입합니다.",
+    "온수 사용 중 압력이 갑자기 낮아지면 팽창 탱크를 점검해 주세요.",
+    "배관 동파 방지를 위해 한파 시 수도꼭지를 조금 열어 두세요.",
+    "보일러 소음이 심하다면 배관 내 공기 빼기 작업을 먼저 시도해 보세요.",
+    "연소 가스가 실내로 역류하지 않도록 배기관을 정기적으로 청소하세요.",
+    "온도 조절기 배터리가 방전되면 보일러가 작동하지 않을 수 있습니다.",
+    "실내 온도와 설정 온도 차이가 5도 이상이면 난방 효율을 점검하세요.",
+    "가스 요금 절감을 위해 취침 시 난방 온도를 18도로 설정하세요.",
+    "보일러 연소 화염 색이 노란색이면 불완전 연소 상태입니다.",
+    "점화 불꽃이 파란색이어야 정상 연소 상태입니다.",
+    "온수 배관에 녹이 슬면 물 색깔이 변할 수 있으니 즉시 점검하세요.",
+    "순환 펌프 고장 시 난방수가 제대로 돌지 않아 바닥이 차가울 수 있습니다.",
+    "보일러 압력계가 2바 이상이면 압력 릴리프 밸브를 점검하세요.",
+    "난방 배관이 오래됐다면 스케일 제거 세척 서비스를 받으시길 권장합니다.",
+    "보일러 내부 열교환기 오염은 효율 저하의 주요 원인 중 하나입니다.",
+    "서비스 기사님 방문 시 제품 시리얼 번호를 미리 준비해 두시면 좋습니다.",
+    "고객님 댁의 가스 계량기 위치를 미리 파악해 두시면 긴급 시 도움이 됩니다.",
+    "가스 공급 업체 연락처를 냉장고 등 눈에 잘 띄는 곳에 붙여두세요.",
+    "어린이나 반려동물이 보일러 주변에 접근하지 않도록 안전 커버를 설치하세요.",
+    "연간 1회 이상 가스 배관 안전 점검을 받으시는 것을 권장합니다.",
+    "고객님, 현재 접수 번호는 2024-09-0031입니다. 기록해 두세요.",
+    "AS 완료 후 만족도 조사 문자가 발송됩니다. 참여 부탁드립니다.",
+    "서비스 후 30일 이내 동일 증상 재발 시 무상 재수리를 보장합니다.",
+    "부품 교체 시 정품 부품을 사용해야 보증이 유지됩니다.",
+    "미인증 부품 사용 시 화재나 고장의 원인이 될 수 있습니다.",
+    "스마트 보일러는 AI 알고리즘으로 사용 패턴을 학습해 최적 온도를 유지합니다.",
+    "앱에서 에너지 리포트를 월별로 다운로드하실 수 있습니다.",
+    "음성 제어 기능을 사용하면 스마트 스피커로 보일러를 켜고 끌 수 있습니다.",
+    "와이파이 연결이 끊기면 보일러는 마지막 설정 온도로 계속 작동합니다.",
+    "앱 알림을 허용하시면 이상 감지 시 즉시 푸시 알림을 받으실 수 있습니다.",
+    "단열 시공이 잘 된 집일수록 보일러 가동 시간을 줄일 수 있습니다.",
+    "창문 틈새 바람막이 시공만으로도 난방비를 최대 15% 절감할 수 있습니다.",
+    "두꺼운 커튼은 창문 열손실을 막아 실내 온도 유지에 효과적입니다.",
+    "온수매트는 전기장판보다 전자파가 적고 온도가 균일하게 유지됩니다.",
+    "바닥 난방보다 라디에이터 난방이 공기 건조함을 더 유발할 수 있습니다.",
+    "전국 고객센터 대표번호는 1588-5000입니다.",
+    "채팅 상담은 평일 오전 8시부터 오후 10시까지 운영됩니다.",
+    "카카오톡 채널 경동나비엔을 추가하시면 빠른 상담이 가능합니다.",
+    "홈페이지 회원 가입 시 첫 AS 접수 비용 10% 할인 쿠폰을 드립니다.",
+    "유튜브 경동나비엔 채널에서 셀프 점검 영상을 확인하실 수 있습니다.",
+    "보일러 교체를 고려 중이시라면 정부 보조금 제도를 활용해 보세요.",
+    "노후 보일러 교체 시 최대 60만 원의 보조금을 지원받을 수 있습니다.",
+    "에너지 바우처 대상 가구는 난방비 지원을 신청하실 수 있습니다.",
+    "저소득층 고객님은 복지관을 통해 무상 점검 서비스를 신청하실 수 있습니다.",
+    "보일러 렌탈 서비스를 이용하시면 초기 비용 없이 최신 제품을 사용하실 수 있습니다.",
+    "렌탈 계약 기간은 36개월에서 60개월까지 선택 가능합니다.",
+    "렌탈 이용 고객은 정기 점검이 계약에 포함되어 있습니다.",
+    "중고 제품 구매 시 반드시 공식 센터에서 안전 점검을 받으세요.",
+    "경동나비엔 공식 온라인 쇼핑몰에서 소모품을 직접 주문하실 수 있습니다.",
+    "오늘도 경동나비엔을 믿고 선택해 주신 고객님께 진심으로 감사드립니다.",
 ]
 
-assert len(SENTENCES) == 100, f"문장 수 오류: {len(SENTENCES)}"
+assert len(SENTENCES) == 150, f"문장 수 오류: {len(SENTENCES)}"
 
 
 # ---------------------------------------------------------------------------
@@ -170,6 +223,7 @@ assert len(SENTENCES) == 100, f"문장 수 오류: {len(SENTENCES)}"
 # ---------------------------------------------------------------------------
 
 def tts_one(idx: int, text: str, out_dir: Path) -> dict:
+    """idx: 1-based 문장 번호 (WAV 파일명에 그대로 사용)"""
     """TTS 요청 1건 수행. 결과 dict 반환."""
     payload = {
         "model": MODEL,
@@ -248,20 +302,26 @@ def tts_one(idx: int, text: str, out_dir: Path) -> dict:
 # 순차 실행
 # ---------------------------------------------------------------------------
 
-def run_sequential(sentences: list[str], out_dir: Path) -> None:
+def run_sequential(sentences: list[str], out_dir: Path, start_num: int = 1) -> None:
+    """
+    sentences: 처리할 문장 목록
+    start_num: 첫 번째 문장의 1-based 번호 (WAV 파일명 기준)
+    """
     out_dir.mkdir(parents=True, exist_ok=True)
 
     total = len(sentences)
+    end_num = start_num + total - 1
     results = []
     wall_start = time.perf_counter()
 
     print(f"출력 폴더: {out_dir}")
-    print(f"총 문장: {total}개  |  순차 처리 시작\n")
+    print(f"처리 범위: {start_num}~{end_num}번  |  총 {total}개  |  순차 처리 시작\n")
     print(f" {'#':>3} | {'TTFA':>7} | {'총 소요':>8} | {'길이':>6} | 파일명")
     print("─" * 75)
 
-    for i, text in enumerate(sentences):
-        r = tts_one(i + 1, text, out_dir)
+    for offset, text in enumerate(sentences):
+        sentence_num = start_num + offset
+        r = tts_one(sentence_num, text, out_dir)
         results.append(r)
 
         if r["success"]:
@@ -300,16 +360,27 @@ def run_sequential(sentences: list[str], out_dir: Path) -> None:
 # ---------------------------------------------------------------------------
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="TTS 100개 문장 순차 처리")
+    parser = argparse.ArgumentParser(description="TTS 순차 처리 (범위 지정 가능)")
     parser.add_argument(
         "--out-dir", type=Path, default=DEFAULT_OUT_DIR,
         help=f"WAV 저장 폴더 (기본값: {DEFAULT_OUT_DIR})"
     )
     parser.add_argument(
-        "--count", type=int, default=len(SENTENCES),
-        help=f"처리할 문장 수 (기본값: {len(SENTENCES)})"
+        "--from", dest="from_num", type=int, default=1,
+        metavar="N", help="시작 문장 번호 (1-based, 기본값: 1)"
+    )
+    parser.add_argument(
+        "--to", dest="to_num", type=int, default=len(SENTENCES),
+        metavar="N", help=f"끝 문장 번호 (1-based, 기본값: {len(SENTENCES)})"
     )
     args = parser.parse_args()
 
-    sentences = SENTENCES[: args.count]
-    run_sequential(sentences, args.out_dir)
+    from_n = max(1, args.from_num)
+    to_n = min(len(SENTENCES), args.to_num)
+
+    if from_n > to_n:
+        print(f"[ERROR] --from {from_n} > --to {to_n}")
+        raise SystemExit(1)
+
+    sentences = SENTENCES[from_n - 1 : to_n]
+    run_sequential(sentences, args.out_dir, start_num=from_n)
