@@ -31,61 +31,14 @@ MODEL = "Qwen/Qwen3-TTS-12Hz-1.7B-Base"
 VOICE_NAME = "femail_achernar"
 REF_AUDIO_PATH = Path(__file__).parent.parent / "wav" / "femail_achernar.wav"
 
-# femail_achernar.wav 에 담긴 발화 텍스트
-REF_TEXT = (
-    "안녕하세요. 경동나비엔 고객센터 에이아이 콜봇입니다. "
-    "보다 정확한 상담을 위해 조용한 곳에서 상담사와 이야기 하드시 "
-    "편하게 말씀해 주시면 더 빠르게 도와 드릴 수 있습니다. 무엇을 도와 드릴까요?"
-)
-
 INPUT_TEXT = (
-    "안녕하세요. 경동나비엔 고객센터 에이아이 콜봇입니다. "
-    "보다 정확한 상담을 위해 조용한 곳에서 상담사와 이야기 하드시 "
-    "편하게 말씀해 주시면 더 빠르게 도와 드릴 수 있습니다. 무엇을 도와 드릴까요?"
+    "이 에러는 stream_player_put_frame()에 전달된 pending_data의 크기가 PJSIP가 허용하는 최대 프레임 크기를 초과했다는 의미입니다."
 )
 
 SAMPLE_RATE = 24_000  # Qwen3-TTS Code2Wav 고정 출력
 CHANNELS = 1
 OUTPUT_PATH = Path("/tmp/kdnavien_tts_output.wav")
 
-
-# ---------------------------------------------------------------------------
-# Step 1: voice 등록
-# ---------------------------------------------------------------------------
-
-def register_voice_if_needed() -> bool:
-    """femail_achernar voice가 없으면 업로드. 이미 있으면 건너뜀."""
-    r = httpx.get(f"{SERVER}/v1/audio/voices", timeout=10)
-    if r.status_code == 200:
-        data = r.json()
-        uploaded = [v["name"].lower() for v in data.get("uploaded_voices", [])]
-        if VOICE_NAME.lower() in uploaded:
-            print(f"Voice '{VOICE_NAME}' 이미 등록됨 — 업로드 건너뜀")
-            return True
-
-    if not REF_AUDIO_PATH.exists():
-        print(f"[ERROR] 레퍼런스 파일 없음: {REF_AUDIO_PATH}")
-        return False
-
-    print(f"Voice '{VOICE_NAME}' 등록 중: {REF_AUDIO_PATH} ({REF_AUDIO_PATH.stat().st_size:,} bytes)")
-    with open(REF_AUDIO_PATH, "rb") as f:
-        r = httpx.post(
-            f"{SERVER}/v1/audio/voices",
-            data={
-                "name": VOICE_NAME,
-                "consent": "agreed",
-                "ref_text": REF_TEXT,
-            },
-            files={"audio_sample": (REF_AUDIO_PATH.name, f, "audio/wav")},
-            timeout=30,
-        )
-
-    if r.status_code == 200:
-        print(f"Voice '{VOICE_NAME}' 등록 완료: {r.json()}")
-        return True
-    else:
-        print(f"[ERROR] Voice 등록 실패: {r.status_code}\n{r.text[:300]}")
-        return False
 
 
 # ---------------------------------------------------------------------------
