@@ -18,7 +18,7 @@ services:
     ports:
       - "30000:30000"
     command:
-      - "Qwen/Qwen3-TTS-12Hz-1.7B-Base"  # HF hub ID 사용 (캐시 마운트로 오프라인 로드)
+      - "Qwen/Qwen3-TTS-12Hz-0.6B-Base"  # HF hub ID 사용 (캐시 마운트로 오프라인 로드)
       - "--omni"
       - "--trust-remote-code"
       - "--max-model-len"
@@ -26,7 +26,7 @@ services:
       - "--dtype"
       - "bfloat16"
       - "--gpu-memory-utilization"
-      - "0.85"
+      - "0.9"
       - "--host"
       - "0.0.0.0"
       - "--port"

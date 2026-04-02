@@ -106,6 +106,25 @@ docker logs -f vllm-qwen3-tts
 Uvicorn running on http://0.0.0.0:30000
 ```
 
+### VLLM::Worker 프로세스가 2개인 이유
+
+`nvidia-smi`로 확인하면 `VLLM::Worker` 프로세스가 2개 보입니다. 이는 정상입니다.
+
+```
+PID USER DEV     TYPE  GPU        GPU MEM  Command
+5658 root   0  Compute  79%   8112MiB  VLLM::Worker  ← Stage 1: Code2Wav
+5527 root   0  Compute  19%   8076MiB  VLLM::Worker  ← Stage 0: Thinker
+```
+
+Qwen3-TTS는 **2-Stage 아키텍처**로 구성되어 있으며, `--omni` 플래그를 사용하면 vllm-omni의 `Orchestrator`가 각 스테이지를 별도 프로세스로 기동합니다.
+
+| 프로세스 | 스테이지 | 역할 | VRAM |
+|---------|---------|------|------|
+| Worker #1 | Stage 0: Thinker | 텍스트 → 코덱 토큰 (AR) | ~8 GB |
+| Worker #2 | Stage 1: Code2Wav | 코덱 토큰 → PCM 오디오 | ~8 GB |
+
+두 Worker의 VRAM 합산 ~16.2 GB로 RTX 3090 (24 GB) 범위 내에서 정상 운영됩니다.
+
 ### Health Check
 
 ```bash
