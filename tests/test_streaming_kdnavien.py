@@ -26,7 +26,7 @@ import sounddevice as sd
 # ---------------------------------------------------------------------------
 
 SERVER = "http://172.31.79.202:30000"
-MODEL = "Qwen/Qwen3-TTS-12Hz-1.7B-Base"
+MODEL = "Qwen/Qwen3-TTS-12Hz-0.6B-Base"
 
 VOICE_NAME = "femail_achernar"
 REF_AUDIO_PATH = Path(__file__).parent.parent / "wav" / "femail_achernar.wav"

@@ -29,7 +29,7 @@ import httpx
 # ---------------------------------------------------------------------------
 
 SERVER = "http://172.31.79.202:30000"
-MODEL = "Qwen/Qwen3-TTS-12Hz-1.7B-Base"
+MODEL = "Qwen/Qwen3-TTS-12Hz-0.6B-Base"
 VOICE_NAME = "femail_achernar"
 
 SAMPLE_RATE = 24_000
@@ -37,7 +37,7 @@ CHANNELS = 1
 
 OUT_DIR = Path(__file__).parent.parent / "out_wav"
 
-DEFAULT_STEPS = [1, 2, 3, 4, 5]
+DEFAULT_STEPS = [1, 2, 3, 4, 5, 6, 7]
 DEFAULT_SLEEP_S = 3
 
 # 10개 입력 텍스트 (N > 10 시 순환)
