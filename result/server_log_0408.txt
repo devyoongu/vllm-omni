@@ -1,0 +1,158 @@
+APIServer pid=1) INFO 04-08 02:03:55 [serving_speech.py:1045] Auto-set ref_audio for uploaded voice: femail_achernar (icl=True)
+(APIServer pid=1) INFO 04-08 02:03:55 [serving_speech.py:1241] TTS speech request speech-91fe815d8ea1342d: text='안녕하세요, 경동나비엔 고객센터입니다. 무엇을 도와드릴까요?', model=Base
+(APIServer pid=1) INFO:     172.31.90.7:63826 - "POST /v1/audio/speech HTTP/1.1" 200 OK
+(APIServer pid=1) INFO 04-08 02:03:55 [orchestrator.py:584] [Orchestrator] _handle_add_request: stage=0 req=speech-91fe815d8ea1342d prompt_type=OmniEngineCoreRequest original_prompt_type=dict final_stage=1 num_sampling_params=2
+(APIServer pid=1) INFO 04-08 02:03:55 [stage_engine_core_client.py:113] [StageEngineCoreClient] Stage-0 adding request: speech-91fe815d8ea1342d
+(APIServer pid=1) INFO 04-08 02:03:55 [stage_engine_core_client.py:113] [StageEngineCoreClient] Stage-1 adding request: speech-91fe815d8ea1342d
+(Worker pid=340) WARNING 04-08 02:03:58 [qwen3_tts_code2wav.py:238] Code2Wav input_ids length 1 not divisible by num_quantizers 16; skipping malformed request.
+(APIServer pid=1) INFO 04-08 02:03:58 [omni_base.py:162] [Summary] {}
+(APIServer pid=1) INFO 04-08 02:04:01 [serving_speech.py:1045] Auto-set ref_audio for uploaded voice: femail_achernar (icl=True)
+(APIServer pid=1) INFO 04-08 02:04:01 [serving_speech.py:1045] Auto-set ref_audio for uploaded voice: femail_achernar (icl=True)
+(APIServer pid=1) INFO 04-08 02:04:01 [serving_speech.py:1241] TTS speech request speech-9204d3a32a100cac: text='이 에러는 stream_player_put_frame()에 전달된 pending_data의...', model=Base
+(APIServer pid=1) INFO:     172.31.90.7:63853 - "POST /v1/audio/speech HTTP/1.1" 200 OK
+(APIServer pid=1) INFO 04-08 02:04:01 [orchestrator.py:584] [Orchestrator] _handle_add_request: stage=0 req=speech-9204d3a32a100cac prompt_type=OmniEngineCoreRequest original_prompt_type=dict final_stage=1 num_sampling_params=2
+(APIServer pid=1) INFO 04-08 02:04:01 [stage_engine_core_client.py:113] [StageEngineCoreClient] Stage-0 adding request: speech-9204d3a32a100cac
+(APIServer pid=1) INFO 04-08 02:04:01 [serving_speech.py:1241] TTS speech request speech-a2bbe9240b08fc2e: text='안녕하세요, 경동나비엔 고객센터입니다. 무엇을 도와드릴까요?', model=Base
+(APIServer pid=1) INFO:     172.31.90.7:63854 - "POST /v1/audio/speech HTTP/1.1" 200 OK
+(APIServer pid=1) INFO 04-08 02:04:01 [stage_engine_core_client.py:113] [StageEngineCoreClient] Stage-1 adding request: speech-9204d3a32a100cac
+(APIServer pid=1) INFO 04-08 02:04:01 [orchestrator.py:584] [Orchestrator] _handle_add_request: stage=0 req=speech-a2bbe9240b08fc2e prompt_type=OmniEngineCoreRequest original_prompt_type=dict final_stage=1 num_sampling_params=2
+(APIServer pid=1) INFO 04-08 02:04:01 [stage_engine_core_client.py:113] [StageEngineCoreClient] Stage-0 adding request: speech-a2bbe9240b08fc2e
+(APIServer pid=1) INFO 04-08 02:04:01 [stage_engine_core_client.py:113] [StageEngineCoreClient] Stage-1 adding request: speech-a2bbe9240b08fc2e
+(Worker pid=340) WARNING 04-08 02:04:04 [qwen3_tts_code2wav.py:238] Code2Wav input_ids length 1 not divisible by num_quantizers 16; skipping malformed request.
+(APIServer pid=1) INFO 04-08 02:04:04 [omni_base.py:162] [Summary] {}
+(Worker pid=340) WARNING 04-08 02:04:05 [qwen3_tts_code2wav.py:238] Code2Wav input_ids length 1 not divisible by num_quantizers 16; skipping malformed request.
+(APIServer pid=1) INFO 04-08 02:04:05 [omni_base.py:162] [Summary] {}
+(APIServer pid=1) INFO 04-08 02:04:08 [serving_speech.py:1045] Auto-set ref_audio for uploaded voice: femail_achernar (icl=True)
+(APIServer pid=1) INFO 04-08 02:04:08 [serving_speech.py:1045] Auto-set ref_audio for uploaded voice: femail_achernar (icl=True)
+(APIServer pid=1) INFO 04-08 02:04:08 [serving_speech.py:1045] Auto-set ref_audio for uploaded voice: femail_achernar (icl=True)
+(APIServer pid=1) INFO 04-08 02:04:08 [serving_speech.py:1241] TTS speech request speech-abbb96e9afc77f2d: text='안녕하세요, 경동나비엔 고객센터입니다. 무엇을 도와드릴까요?', model=Base
+(APIServer pid=1) INFO:     172.31.90.7:63890 - "POST /v1/audio/speech HTTP/1.1" 200 OK
+(APIServer pid=1) INFO 04-08 02:04:08 [orchestrator.py:584] [Orchestrator] _handle_add_request: stage=0 req=speech-abbb96e9afc77f2d prompt_type=OmniEngineCoreRequest original_prompt_type=dict final_stage=1 num_sampling_params=2
+(APIServer pid=1) INFO 04-08 02:04:08 [stage_engine_core_client.py:113] [StageEngineCoreClient] Stage-0 adding request: speech-abbb96e9afc77f2d
+(APIServer pid=1) INFO 04-08 02:04:08 [serving_speech.py:1241] TTS speech request speech-a2e52d9830ee6d6e: text='이 에러는 stream_player_put_frame()에 전달된 pending_data의...', model=Base
+(APIServer pid=1) INFO:     172.31.90.7:63891 - "POST /v1/audio/speech HTTP/1.1" 200 OK
+(APIServer pid=1) INFO 04-08 02:04:08 [stage_engine_core_client.py:113] [StageEngineCoreClient] Stage-1 adding request: speech-abbb96e9afc77f2d
+(APIServer pid=1) INFO 04-08 02:04:08 [orchestrator.py:584] [Orchestrator] _handle_add_request: stage=0 req=speech-a2e52d9830ee6d6e prompt_type=OmniEngineCoreRequest original_prompt_type=dict final_stage=1 num_sampling_params=2
+(APIServer pid=1) INFO 04-08 02:04:08 [stage_engine_core_client.py:113] [StageEngineCoreClient] Stage-0 adding request: speech-a2e52d9830ee6d6e
+(APIServer pid=1) INFO 04-08 02:04:08 [serving_speech.py:1241] TTS speech request speech-b38456e434733854: text='현재 서울 지역의 날씨는 맑음이며, 기온은 섭씨 22도입니다. 외출 시 가벼운 겉옷을 준비...', model=Base
+(APIServer pid=1) INFO:     172.31.90.7:63889 - "POST /v1/audio/speech HTTP/1.1" 200 OK
+(APIServer pid=1) INFO 04-08 02:04:08 [stage_engine_core_client.py:113] [StageEngineCoreClient] Stage-1 adding request: speech-a2e52d9830ee6d6e
+(APIServer pid=1) INFO 04-08 02:04:08 [orchestrator.py:584] [Orchestrator] _handle_add_request: stage=0 req=speech-b38456e434733854 prompt_type=OmniEngineCoreRequest original_prompt_type=dict final_stage=1 num_sampling_params=2
+(APIServer pid=1) INFO 04-08 02:04:08 [stage_engine_core_client.py:113] [StageEngineCoreClient] Stage-0 adding request: speech-b38456e434733854
+(APIServer pid=1) INFO 04-08 02:04:08 [stage_engine_core_client.py:113] [StageEngineCoreClient] Stage-1 adding request: speech-b38456e434733854
+(Worker pid=340) WARNING 04-08 02:04:11 [qwen3_tts_code2wav.py:238] Code2Wav input_ids length 1 not divisible by num_quantizers 16; skipping malformed request.
+(APIServer pid=1) INFO 04-08 02:04:11 [omni_base.py:162] [Summary] {}
+(Worker pid=340) WARNING 04-08 02:04:12 [qwen3_tts_code2wav.py:238] Code2Wav input_ids length 1 not divisible by num_quantizers 16; skipping malformed request.
+(APIServer pid=1) INFO 04-08 02:04:12 [omni_base.py:162] [Summary] {}
+(Worker pid=340) WARNING 04-08 02:04:13 [qwen3_tts_code2wav.py:238] Code2Wav input_ids length 1 not divisible by num_quantizers 16; skipping malformed request.
+(APIServer pid=1) INFO 04-08 02:04:13 [omni_base.py:162] [Summary] {}
+(APIServer pid=1) INFO 04-08 02:04:16 [serving_speech.py:1045] Auto-set ref_audio for uploaded voice: femail_achernar (icl=True)
+(APIServer pid=1) INFO 04-08 02:04:16 [serving_speech.py:1045] Auto-set ref_audio for uploaded voice: femail_achernar (icl=True)
+(APIServer pid=1) INFO 04-08 02:04:16 [serving_speech.py:1045] Auto-set ref_audio for uploaded voice: femail_achernar (icl=True)
+(APIServer pid=1) INFO 04-08 02:04:16 [serving_speech.py:1045] Auto-set ref_audio for uploaded voice: femail_achernar (icl=True)
+(APIServer pid=1) INFO 04-08 02:04:16 [serving_speech.py:1241] TTS speech request speech-8d3693a615381463: text='이 에러는 stream_player_put_frame()에 전달된 pending_data의...', model=Base
+(APIServer pid=1) INFO 04-08 02:04:16 [serving_speech.py:1241] TTS speech request speech-8c4d09e37baece04: text='고객님의 예약이 확인되었습니다. 예약 번호는 A-1-2-3-4-5입니다. 방문 전 확인 문...', model=Base
+(APIServer pid=1) INFO 04-08 02:04:16 [serving_speech.py:1241] TTS speech request speech-b4d58462f80814ee: text='현재 서울 지역의 날씨는 맑음이며, 기온은 섭씨 22도입니다. 외출 시 가벼운 겉옷을 준비...', model=Base
+(APIServer pid=1) INFO:     172.31.90.7:63939 - "POST /v1/audio/speech HTTP/1.1" 200 OK
+(APIServer pid=1) INFO 04-08 02:04:16 [orchestrator.py:584] [Orchestrator] _handle_add_request: stage=0 req=speech-8d3693a615381463 prompt_type=OmniEngineCoreRequest original_prompt_type=dict final_stage=1 num_sampling_params=2
+(APIServer pid=1) INFO 04-08 02:04:16 [serving_speech.py:1241] TTS speech request speech-8401a4a39f6f0e0b: text='안녕하세요, 경동나비엔 고객센터입니다. 무엇을 도와드릴까요?', model=Base
+(APIServer pid=1) INFO 04-08 02:04:16 [stage_engine_core_client.py:113] [StageEngineCoreClient] Stage-0 adding request: speech-8d3693a615381463
+(APIServer pid=1) INFO:     172.31.90.7:63937 - "POST /v1/audio/speech HTTP/1.1" 200 OK
+(APIServer pid=1) INFO:     172.31.90.7:63938 - "POST /v1/audio/speech HTTP/1.1" 200 OK
+(APIServer pid=1) INFO:     172.31.90.7:63940 - "POST /v1/audio/speech HTTP/1.1" 200 OK
+(APIServer pid=1) INFO 04-08 02:04:16 [stage_engine_core_client.py:113] [StageEngineCoreClient] Stage-1 adding request: speech-8d3693a615381463
+(APIServer pid=1) INFO 04-08 02:04:16 [orchestrator.py:584] [Orchestrator] _handle_add_request: stage=0 req=speech-8c4d09e37baece04 prompt_type=OmniEngineCoreRequest original_prompt_type=dict final_stage=1 num_sampling_params=2
+(APIServer pid=1) INFO 04-08 02:04:16 [stage_engine_core_client.py:113] [StageEngineCoreClient] Stage-0 adding request: speech-8c4d09e37baece04
+(APIServer pid=1) INFO 04-08 02:04:16 [stage_engine_core_client.py:113] [StageEngineCoreClient] Stage-1 adding request: speech-8c4d09e37baece04
+(APIServer pid=1) INFO 04-08 02:04:16 [orchestrator.py:584] [Orchestrator] _handle_add_request: stage=0 req=speech-b4d58462f80814ee prompt_type=OmniEngineCoreRequest original_prompt_type=dict final_stage=1 num_sampling_params=2
+(APIServer pid=1) INFO 04-08 02:04:16 [stage_engine_core_client.py:113] [StageEngineCoreClient] Stage-0 adding request: speech-b4d58462f80814ee
+(APIServer pid=1) INFO 04-08 02:04:16 [stage_engine_core_client.py:113] [StageEngineCoreClient] Stage-1 adding request: speech-b4d58462f80814ee
+(APIServer pid=1) INFO 04-08 02:04:16 [orchestrator.py:584] [Orchestrator] _handle_add_request: stage=0 req=speech-8401a4a39f6f0e0b prompt_type=OmniEngineCoreRequest original_prompt_type=dict final_stage=1 num_sampling_params=2
+(APIServer pid=1) INFO 04-08 02:04:16 [stage_engine_core_client.py:113] [StageEngineCoreClient] Stage-0 adding request: speech-8401a4a39f6f0e0b
+(APIServer pid=1) INFO 04-08 02:04:16 [stage_engine_core_client.py:113] [StageEngineCoreClient] Stage-1 adding request: speech-8401a4a39f6f0e0b
+(Worker pid=340) WARNING 04-08 02:04:19 [qwen3_tts_code2wav.py:238] Code2Wav input_ids length 1 not divisible by num_quantizers 16; skipping malformed request.
+(APIServer pid=1) INFO 04-08 02:04:19 [omni_base.py:162] [Summary] {}
+(Worker pid=340) WARNING 04-08 02:04:21 [qwen3_tts_code2wav.py:238] Code2Wav input_ids length 1 not divisible by num_quantizers 16; skipping malformed request.
+(APIServer pid=1) INFO 04-08 02:04:21 [omni_base.py:162] [Summary] {}
+(Worker pid=340) WARNING 04-08 02:04:21 [qwen3_tts_code2wav.py:238] Code2Wav input_ids length 1 not divisible by num_quantizers 16; skipping malformed request.
+(APIServer pid=1) INFO 04-08 02:04:21 [omni_base.py:162] [Summary] {}
+(Worker pid=340) WARNING 04-08 02:04:22 [qwen3_tts_code2wav.py:238] Code2Wav input_ids length 1 not divisible by num_quantizers 16; skipping malformed request.
+(APIServer pid=1) INFO 04-08 02:04:22 [omni_base.py:162] [Summary] {}
+(APIServer pid=1) INFO 04-08 02:04:25 [serving_speech.py:1045] Auto-set ref_audio for uploaded voice: femail_achernar (icl=True)
+(APIServer pid=1) INFO 04-08 02:04:25 [serving_speech.py:1045] Auto-set ref_audio for uploaded voice: femail_achernar (icl=True)
+(APIServer pid=1) INFO 04-08 02:04:25 [serving_speech.py:1045] Auto-set ref_audio for uploaded voice: femail_achernar (icl=True)
+(APIServer pid=1) INFO 04-08 02:04:25 [serving_speech.py:1045] Auto-set ref_audio for uploaded voice: femail_achernar (icl=True)
+(APIServer pid=1) INFO 04-08 02:04:25 [serving_speech.py:1045] Auto-set ref_audio for uploaded voice: femail_achernar (icl=True)
+(APIServer pid=1) INFO 04-08 02:04:25 [serving_speech.py:1241] TTS speech request speech-9cebac4330ec9a92: text='현재 서울 지역의 날씨는 맑음이며, 기온은 섭씨 22도입니다. 외출 시 가벼운 겉옷을 준비...', model=Base
+(APIServer pid=1) INFO 04-08 02:04:25 [serving_speech.py:1241] TTS speech request speech-b8abbf486302a4d7: text='안내 말씀드립니다. 5월 1일 근로자의 날은 고객센터 운영이 중단됩니다. 긴급 문의는 앱을...', model=Base
+(APIServer pid=1) INFO 04-08 02:04:25 [serving_speech.py:1241] TTS speech request speech-8ae5648e76f296c9: text='고객님의 예약이 확인되었습니다. 예약 번호는 A-1-2-3-4-5입니다. 방문 전 확인 문...', model=Base
+(APIServer pid=1) INFO:     172.31.90.7:63984 - "POST /v1/audio/speech HTTP/1.1" 200 OK
+(APIServer pid=1) INFO 04-08 02:04:25 [orchestrator.py:584] [Orchestrator] _handle_add_request: stage=0 req=speech-9cebac4330ec9a92 prompt_type=OmniEngineCoreRequest original_prompt_type=dict final_stage=1 num_sampling_params=2
+(APIServer pid=1) INFO 04-08 02:04:25 [serving_speech.py:1241] TTS speech request speech-90a4867a1f993a36: text='이 에러는 stream_player_put_frame()에 전달된 pending_data의...', model=Base
+(APIServer pid=1) INFO 04-08 02:04:25 [stage_engine_core_client.py:113] [StageEngineCoreClient] Stage-0 adding request: speech-9cebac4330ec9a92
+(APIServer pid=1) INFO 04-08 02:04:25 [serving_speech.py:1241] TTS speech request speech-8052d9f227695da5: text='안녕하세요, 경동나비엔 고객센터입니다. 무엇을 도와드릴까요?', model=Base
+(APIServer pid=1) INFO:     172.31.90.7:63981 - "POST /v1/audio/speech HTTP/1.1" 200 OK
+(APIServer pid=1) INFO:     172.31.90.7:63983 - "POST /v1/audio/speech HTTP/1.1" 200 OK
+(APIServer pid=1) INFO:     172.31.90.7:63985 - "POST /v1/audio/speech HTTP/1.1" 200 OK
+(APIServer pid=1) INFO:     172.31.90.7:63982 - "POST /v1/audio/speech HTTP/1.1" 200 OK
+(APIServer pid=1) INFO 04-08 02:04:25 [stage_engine_core_client.py:113] [StageEngineCoreClient] Stage-1 adding request: speech-9cebac4330ec9a92
+(APIServer pid=1) INFO 04-08 02:04:25 [orchestrator.py:584] [Orchestrator] _handle_add_request: stage=0 req=speech-b8abbf486302a4d7 prompt_type=OmniEngineCoreRequest original_prompt_type=dict final_stage=1 num_sampling_params=2
+(APIServer pid=1) INFO 04-08 02:04:25 [stage_engine_core_client.py:113] [StageEngineCoreClient] Stage-0 adding request: speech-b8abbf486302a4d7
+(APIServer pid=1) INFO 04-08 02:04:25 [stage_engine_core_client.py:113] [StageEngineCoreClient] Stage-1 adding request: speech-b8abbf486302a4d7
+(APIServer pid=1) INFO 04-08 02:04:25 [orchestrator.py:584] [Orchestrator] _handle_add_request: stage=0 req=speech-8ae5648e76f296c9 prompt_type=OmniEngineCoreRequest original_prompt_type=dict final_stage=1 num_sampling_params=2
+(APIServer pid=1) INFO 04-08 02:04:25 [stage_engine_core_client.py:113] [StageEngineCoreClient] Stage-0 adding request: speech-8ae5648e76f296c9
+(APIServer pid=1) INFO 04-08 02:04:25 [stage_engine_core_client.py:113] [StageEngineCoreClient] Stage-1 adding request: speech-8ae5648e76f296c9
+(APIServer pid=1) INFO 04-08 02:04:25 [orchestrator.py:584] [Orchestrator] _handle_add_request: stage=0 req=speech-90a4867a1f993a36 prompt_type=OmniEngineCoreRequest original_prompt_type=dict final_stage=1 num_sampling_params=2
+(APIServer pid=1) INFO 04-08 02:04:25 [stage_engine_core_client.py:113] [StageEngineCoreClient] Stage-0 adding request: speech-90a4867a1f993a36
+(APIServer pid=1) INFO 04-08 02:04:25 [stage_engine_core_client.py:113] [StageEngineCoreClient] Stage-1 adding request: speech-90a4867a1f993a36
+(APIServer pid=1) INFO 04-08 02:04:25 [orchestrator.py:584] [Orchestrator] _handle_add_request: stage=0 req=speech-8052d9f227695da5 prompt_type=OmniEngineCoreRequest original_prompt_type=dict final_stage=1 num_sampling_params=2
+(APIServer pid=1) INFO 04-08 02:04:25 [stage_engine_core_client.py:113] [StageEngineCoreClient] Stage-0 adding request: speech-8052d9f227695da5
+(APIServer pid=1) INFO 04-08 02:04:25 [stage_engine_core_client.py:113] [StageEngineCoreClient] Stage-1 adding request: speech-8052d9f227695da5
+(Worker pid=340) WARNING 04-08 02:04:30 [qwen3_tts_code2wav.py:238] Code2Wav input_ids length 1 not divisible by num_quantizers 16; skipping malformed request.
+(APIServer pid=1) INFO 04-08 02:04:30 [omni_base.py:162] [Summary] {}
+(Worker pid=340) WARNING 04-08 02:04:31 [qwen3_tts_code2wav.py:238] Code2Wav input_ids length 1 not divisible by num_quantizers 16; skipping malformed request.
+(APIServer pid=1) INFO 04-08 02:04:31 [omni_base.py:162] [Summary] {}
+(Worker pid=340) WARNING 04-08 02:04:32 [qwen3_tts_code2wav.py:238] Code2Wav input_ids length 1 not divisible by num_quantizers 16; skipping malformed request.
+(APIServer pid=1) INFO 04-08 02:04:32 [omni_base.py:162] [Summary] {}
+(Worker pid=340) WARNING 04-08 02:04:32 [qwen3_tts_code2wav.py:238] Code2Wav input_ids length 1 not divisible by num_quantizers 16; skipping malformed request.
+(APIServer pid=1) INFO 04-08 02:04:32 [omni_base.py:162] [Summary] {}
+(Worker pid=340) WARNING 04-08 02:04:32 [qwen3_tts_code2wav.py:238] Code2Wav input_ids length 1 not divisible by num_quantizers 16; skipping malformed request.
+(APIServer pid=1) INFO 04-08 02:04:32 [omni_base.py:162] [Summary] {}
+(APIServer pid=1) INFO 04-08 02:04:35 [serving_speech.py:1045] Auto-set ref_audio for uploaded voice: femail_achernar (icl=True)
+(APIServer pid=1) INFO 04-08 02:04:35 [serving_speech.py:1045] Auto-set ref_audio for uploaded voice: femail_achernar (icl=True)
+(APIServer pid=1) INFO 04-08 02:04:35 [serving_speech.py:1045] Auto-set ref_audio for uploaded voice: femail_achernar (icl=True)
+(APIServer pid=1) INFO 04-08 02:04:35 [serving_speech.py:1045] Auto-set ref_audio for uploaded voice: femail_achernar (icl=True)
+(APIServer pid=1) INFO 04-08 02:04:35 [serving_speech.py:1045] Auto-set ref_audio for uploaded voice: femail_achernar (icl=True)
+(APIServer pid=1) INFO 04-08 02:04:35 [serving_speech.py:1045] Auto-set ref_audio for uploaded voice: femail_achernar (icl=True)
+(APIServer pid=1) INFO 04-08 02:04:35 [serving_speech.py:1241] TTS speech request speech-bb17bd42e9fb5184: text='현재 서울 지역의 날씨는 맑음이며, 기온은 섭씨 22도입니다. 외출 시 가벼운 겉옷을 준비...', model=Base
+(APIServer pid=1) INFO 04-08 02:04:35 [serving_speech.py:1241] TTS speech request speech-be9c2ed9708be07d: text='보일러 온도를 올리고 싶으신가요? 리모컨의 온도 버튼을 길게 누르시면 설정 화면으로 이동합...', model=Base
+(APIServer pid=1) INFO 04-08 02:04:35 [serving_speech.py:1241] TTS speech request speech-95c9073bd31f2672: text='안녕하세요, 경동나비엔 고객센터입니다. 무엇을 도와드릴까요?', model=Base
+(APIServer pid=1) INFO 04-08 02:04:35 [serving_speech.py:1241] TTS speech request speech-93ad893c6b54f2a9: text='고객님의 예약이 확인되었습니다. 예약 번호는 A-1-2-3-4-5입니다. 방문 전 확인 문...', model=Base
+(APIServer pid=1) INFO 04-08 02:04:35 [serving_speech.py:1241] TTS speech request speech-ab38f3a6c320ffb5: text='안내 말씀드립니다. 5월 1일 근로자의 날은 고객센터 운영이 중단됩니다. 긴급 문의는 앱을...', model=Base
+(APIServer pid=1) INFO:     172.31.90.7:64037 - "POST /v1/audio/speech HTTP/1.1" 200 OK
+(APIServer pid=1) INFO:     172.31.90.7:64038 - "POST /v1/audio/speech HTTP/1.1" 200 OK
+(APIServer pid=1) INFO:     172.31.90.7:64040 - "POST /v1/audio/speech HTTP/1.1" 200 OK
+(APIServer pid=1) INFO 04-08 02:04:35 [orchestrator.py:584] [Orchestrator] _handle_add_request: stage=0 req=speech-bb17bd42e9fb5184 prompt_type=OmniEngineCoreRequest original_prompt_type=dict final_stage=1 num_sampling_params=2
+(APIServer pid=1) INFO 04-08 02:04:35 [stage_engine_core_client.py:113] [StageEngineCoreClient] Stage-0 adding request: speech-bb17bd42e9fb5184
+(APIServer pid=1) INFO 04-08 02:04:35 [serving_speech.py:1241] TTS speech request speech-83ffac207ae329ab: text='이 에러는 stream_player_put_frame()에 전달된 pending_data의...', model=Base
+(APIServer pid=1) INFO:     172.31.90.7:64041 - "POST /v1/audio/speech HTTP/1.1" 200 OK
+(APIServer pid=1) INFO:     172.31.90.7:64039 - "POST /v1/audio/speech HTTP/1.1" 200 OK
+(APIServer pid=1) INFO 04-08 02:04:35 [stage_engine_core_client.py:113] [StageEngineCoreClient] Stage-1 adding request: speech-bb17bd42e9fb5184
+(APIServer pid=1) INFO:     172.31.90.7:64042 - "POST /v1/audio/speech HTTP/1.1" 200 OK
+(APIServer pid=1) INFO 04-08 02:04:35 [orchestrator.py:584] [Orchestrator] _handle_add_request: stage=0 req=speech-be9c2ed9708be07d prompt_type=OmniEngineCoreRequest original_prompt_type=dict final_stage=1 num_sampling_params=2
+(APIServer pid=1) INFO 04-08 02:04:35 [stage_engine_core_client.py:113] [StageEngineCoreClient] Stage-0 adding request: speech-be9c2ed9708be07d
+(APIServer pid=1) INFO 04-08 02:04:35 [stage_engine_core_client.py:113] [StageEngineCoreClient] Stage-1 adding request: speech-be9c2ed9708be07d
+(APIServer pid=1) INFO 04-08 02:04:35 [orchestrator.py:584] [Orchestrator] _handle_add_request: stage=0 req=speech-95c9073bd31f2672 prompt_type=OmniEngineCoreRequest original_prompt_type=dict final_stage=1 num_sampling_params=2
+(APIServer pid=1) INFO 04-08 02:04:35 [stage_engine_core_client.py:113] [StageEngineCoreClient] Stage-0 adding request: speech-95c9073bd31f2672
+(APIServer pid=1) INFO 04-08 02:04:35 [stage_engine_core_client.py:113] [StageEngineCoreClient] Stage-1 adding request: speech-95c9073bd31f2672
+(APIServer pid=1) INFO 04-08 02:04:35 [orchestrator.py:584] [Orchestrator] _handle_add_request: stage=0 req=speech-93ad893c6b54f2a9 prompt_type=OmniEngineCoreRequest original_prompt_type=dict final_stage=1 num_sampling_params=2
+(APIServer pid=1) INFO 04-08 02:04:35 [stage_engine_core_client.py:113] [StageEngineCoreClient] Stage-0 adding request: speech-93ad893c6b54f2a9
+(APIServer pid=1) INFO 04-08 02:04:36 [stage_engine_core_client.py:113] [StageEngineCoreClient] Stage-1 adding request: speech-93ad893c6b54f2a9
+(APIServer pid=1) INFO 04-08 02:04:36 [orchestrator.py:584] [Orchestrator] _handle_add_request: stage=0 req=speech-ab38f3a6c320ffb5 prompt_type=OmniEngineCoreRequest original_prompt_type=dict final_stage=1 num_sampling_params=2
+(APIServer pid=1) INFO 04-08 02:04:36 [stage_engine_core_client.py:113] [StageEngineCoreClient] Stage-0 adding request: speech-ab38f3a6c320ffb5
+(APIServer pid=1) INFO 04-08 02:04:36 [stage_engine_core_client.py:113] [StageEngineCoreClient] Stage-1 adding request: speech-ab38f3a6c320ffb5
+(APIServer pid=1) INFO 04-08 02:04:36 [orchestrator.py:584] [Orchestrator] _handle_add_request: stage=0 req=speech-83ffac207ae329ab prompt_type=OmniEngineCoreRequest original_prompt_type=dict final_stage=1 num_sampling_params=2
+(APIServer pid=1) INFO 04-08 02:04:36 [stage_engine_core_client.py:113] [StageEngineCoreClient] Stage-0 adding request: speech-83ffac207ae329ab
+(APIServer pid=1) INFO 04-08 02:04:36 [stage_engine_core_client.py:113] [StageEngineCoreClient] Stage-1 adding request: speech-83ffac207ae329ab
+(Worker pid=150) INFO 04-08 02:04:36 [multiproc_executor.py:759] Parent process exited, terminating worker queues
+(Worker pid=150) INFO 04-08 02:04:36 [multiproc_executor.py:854] WorkerProc shutting down.
