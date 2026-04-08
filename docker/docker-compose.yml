@@ -12,13 +12,9 @@ services:
       - HF_HOME=/root/.cache/huggingface
       # Code2Wav stage가 코덱 스트리밍을 위해 max_position_embeddings(32768) 초과 필요
       - VLLM_ALLOW_LONG_MAX_MODEL_LEN=1
-      # 업로드된 음성 샘플 저장 경로 (호스트의 wav 디렉토리 활용)
-      - SPEECH_VOICE_SAMPLES=/data/voice_samples
     volumes:
       # HuggingFace 캐시 디렉토리를 컨테이너 안으로 마운트
       - /home/posicube/.cache/huggingface:/root/.cache/huggingface
-      # 음성 샘플 데이터 영속화 (컨테이너 재시작 시에도 유지)
-      - voice_samples:/data/voice_samples
     ports:
       - "30000:30000"
     command:
@@ -42,6 +38,3 @@ services:
             - driver: nvidia
               device_ids: ['0']  # RTX 3090 (GPU 0)
               capabilities: [gpu]
-
-volumes:
-  voice_samples:

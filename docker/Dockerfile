@@ -22,3 +22,8 @@ ENV HF_HOME=/root/.cache/huggingface
 
 # vLLM-Omni 소스 설치
 RUN pip install --no-cache-dir -e .
+
+# entrypoint 스크립트 실행 권한 부여
+RUN chmod +x /app/vllm-omni/docker/entrypoint.sh /app/vllm-omni/docker/register_voices.sh
+
+ENTRYPOINT ["/app/vllm-omni/docker/entrypoint.sh"]
