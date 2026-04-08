@@ -22,7 +22,7 @@ services:
       - "--omni"
       - "--trust-remote-code"
       - "--max-model-len"
-      - "1024"
+      - "4096"
       - "--dtype"
       - "bfloat16"
       - "--gpu-memory-utilization"
