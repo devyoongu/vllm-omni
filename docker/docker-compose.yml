@@ -14,7 +14,7 @@ services:
       - VLLM_ALLOW_LONG_MAX_MODEL_LEN=1
     volumes:
       # HuggingFace 캐시 디렉토리를 컨테이너 안으로 마운트
-      - /home/posicube/.cache/huggingface:/root/.cache/huggingface
+      - /home/yh.ahn/.cache/huggingface:/root/.cache/huggingface
     ports:
       - "30000:30000"
     command:
