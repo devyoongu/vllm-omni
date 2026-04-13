@@ -25,7 +25,8 @@ import sounddevice as sd
 # 설정
 # ---------------------------------------------------------------------------
 
-SERVER = "http://172.31.79.202:30000"
+# SERVER = "http://172.31.79.202:30000"
+SERVER = "http://172.31.88.110:30000"
 MODEL = "Qwen/Qwen3-TTS-12Hz-0.6B-Base"
 
 VOICE_NAME = "femail_achernar"
