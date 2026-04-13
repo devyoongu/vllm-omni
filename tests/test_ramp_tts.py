@@ -38,8 +38,8 @@ CHANNELS = 1
 
 OUT_DIR = Path(__file__).parent.parent / "out_wav"
 
-DEFAULT_STEPS = [1, 2, 3, 4, 5, 6, 7]
-DEFAULT_SLEEP_S = 3
+DEFAULT_STEPS = [1, 2, 3, 4, 5, 6, 7,8, 9, 10,11, 12, 13, 14, 15,16, 17, 18, 19, 20]
+DEFAULT_SLEEP_S = 1
 
 # 10개 입력 텍스트 (N > 10 시 순환)
 TEXTS = [
