@@ -13,7 +13,7 @@ services:
       - HF_HOME=/root/.cache/huggingface
       # Code2Wav stage가 코덱 스트리밍을 위해 max_position_embeddings(32768) 초과 필요
       - VLLM_ALLOW_LONG_MAX_MODEL_LEN=1
-      - OMP_NUM_THREADS=8  # CPU 스레드 수 조정 (필요에 따라 조정)
+      - OMP_NUM_THREADS=16  # CPU 스레드 수 조정 (필요에 따라 조정)
     volumes:
       # HuggingFace 캐시 디렉토리를 컨테이너 안으로 마운트
       - /home/yh.ahn/.cache/huggingface:/root/.cache/huggingface
