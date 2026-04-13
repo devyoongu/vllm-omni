@@ -3,6 +3,7 @@ services:
     image: vllm-omni:custom
     container_name: vllm-qwen3-tts
     runtime: nvidia
+    shm_size: '16gb'  # 공유 메모리 크기 (필요에 따라 조정)
     environment:
       - NVIDIA_VISIBLE_DEVICES=0  # RTX 3090은 GPU 0번
       # --- 가속 엔진 및 병목 제거 설정 ---
@@ -12,6 +13,7 @@ services:
       - HF_HOME=/root/.cache/huggingface
       # Code2Wav stage가 코덱 스트리밍을 위해 max_position_embeddings(32768) 초과 필요
       - VLLM_ALLOW_LONG_MAX_MODEL_LEN=1
+      - OMP_NUM_THREADS=4  # CPU 스레드 수 조정 (필요에 따라 조정)
     volumes:
       # HuggingFace 캐시 디렉토리를 컨테이너 안으로 마운트
       - /home/yh.ahn/.cache/huggingface:/root/.cache/huggingface
