@@ -89,8 +89,12 @@ docker build -f docker/Dockerfile -t vllm-omni:custom .
 
 ```bash
 cd ~/tts/vllm-omni
-docker-compose -f docker/docker-compose.yml up -d
+docker compose -f docker/docker-compose.yml up -d
 ```
+
+> **주의:** 명령은 `docker compose` (하이픈 없음, Compose v2 플러그인) 입니다.
+> 구버전 `docker-compose` (v1, Python 패키지)는 최신 `requests`/`urllib3` 와 호환되지 않아
+> `Not supported URL scheme http+docker` 오류가 발생합니다.
 
 ### 로그 확인
 
@@ -181,28 +185,80 @@ curl -X POST http://localhost:30000/v1/audio/voices \
 
 ---
 
-## 7. 서비스 중지 / 재시작
+## 7. 외부 머신에서 접근 (SSH 터널)
+
+배포된 TTS 서비스의 30000 포트는 사내망 방화벽 정책으로 외부에서 직접 접근이 차단될 수 있습니다.
+(SSH 22번은 열려있어도 30000은 막힌 케이스가 일반적)
+
+증상 — 클라이언트(Mac/노트북)에서:
+- `ping 172.31.88.110` ✅ (L3 도달은 됨)
+- `nc -zv 172.31.88.110 30000` ❌ Connection timed out
+- `curl http://172.31.88.110:30000/health` ❌ 타임아웃
+
+반면 서버 안에서는 `curl http://localhost:30000/health` 가 정상 200 OK 를 돌려줍니다.
+
+### SSH 로컬 포워딩으로 우회
+
+클라이언트 머신에서 별도 터미널에 띄워두고 유지합니다:
+
+```bash
+ssh -i /path/to/ssh_key \
+    -N -L 30000:localhost:30000 \
+    yh.ahn@172.31.88.110
+```
+
+| 옵션 | 의미 |
+|------|------|
+| `-N` | 원격 명령 실행 없이 터널만 유지 |
+| `-L 30000:localhost:30000` | Mac의 30000 → 서버 내부의 localhost:30000 으로 포워딩 |
+
+이후 Mac에서는 `http://localhost:30000` 으로 호출하면 됩니다.
+
+```bash
+curl http://localhost:30000/health                   # 200 OK
+curl http://localhost:30000/v1/audio/voices          # 등록된 voice 조회
+python tests/test_streaming_kdnavien.py              # 스트리밍 TTS 테스트
+```
+
+> **참고:** 테스트 스크립트는 `TTS_SERVER` 환경변수로 서버 주소를 오버라이드할 수 있게 되어 있습니다.
+> 기본값은 `http://localhost:30000` 이므로 터널만 띄우면 별도 설정 없이 동작합니다.
+
+### 근본 해결 (방화벽 룰 추가)
+
+자주 쓰는 환경이라면 서버 측에 30000 포트 인바운드 룰을 추가합니다 (sudo 필요):
+
+```bash
+sudo ufw allow 30000/tcp
+# 또는 ufw 미사용 시
+sudo iptables -A INPUT -p tcp --dport 30000 -j ACCEPT
+```
+
+사내망/클라우드 보안그룹 단에서 막힌 경우엔 위 명령으로 안 뚫리므로 IT 팀에 룰 추가를 요청해야 합니다.
+
+---
+
+## 8. 서비스 중지 / 재시작
 
 ```bash
 # 중지
-docker-compose -f docker/docker-compose.yml down
+docker compose -f docker/docker-compose.yml down
 
 # 재시작 (이미지 재빌드 없이)
-docker-compose -f docker/docker-compose.yml up -d
+docker compose -f docker/docker-compose.yml up -d
 ```
 
 ---
 
-## 8. 소스 업데이트 후 재배포
+## 9. 소스 업데이트 후 재배포
 
 ```bash
 cd ~/tts/vllm-omni
 git pull
 
 # 소스가 변경된 경우 이미지 재빌드 필요
-docker-compose -f docker/docker-compose.yml down
+docker compose -f docker/docker-compose.yml down
 docker build -f docker/Dockerfile -t vllm-omni:custom .
-docker-compose -f docker/docker-compose.yml up -d
+docker compose -f docker/docker-compose.yml up -d
 
 # voice 재등록 (컨테이너 재시작으로 초기화됨)
 curl -X POST http://localhost:30000/v1/audio/voices \
@@ -214,7 +270,7 @@ curl -X POST http://localhost:30000/v1/audio/voices \
 
 ---
 
-## 9. 트러블슈팅
+## 10. 트러블슈팅
 
 ### max_model_len 오류
 

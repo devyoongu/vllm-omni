@@ -11,6 +11,7 @@ Requirements:
     pip install httpx sounddevice
 """
 
+import os
 import queue
 import threading
 import time
@@ -25,8 +26,12 @@ import sounddevice as sd
 # 설정
 # ---------------------------------------------------------------------------
 
-# SERVER = "http://172.31.79.202:30000"
-SERVER = "http://172.31.88.110:30000"
+# 서버 30000 포트는 외부에서 직접 접근 불가 (방화벽).
+# 사용 전 SSH 터널을 띄워두세요:
+#   ssh -i /Users/yglee/python/tts_manager/ssh/yhahn_servers \
+#       -N -L 30000:localhost:30000 yh.ahn@172.31.88.110
+# 다른 주소로 테스트하려면 환경변수 TTS_SERVER 로 오버라이드.
+SERVER = os.environ.get("TTS_SERVER", "http://localhost:30000")
 MODEL = "Qwen/Qwen3-TTS-12Hz-0.6B-Base"
 
 VOICE_NAME = "femail_achernar"
