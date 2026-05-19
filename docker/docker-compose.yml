@@ -16,7 +16,7 @@ services:
       - OMP_NUM_THREADS=16  # CPU 스레드 수 조정 (필요에 따라 조정)
     volumes:
       # HuggingFace 캐시 디렉토리를 컨테이너 안으로 마운트
-      - /home/yh.ahn/.cache/huggingface:/root/.cache/huggingface
+      - /home/posicube/.cache/huggingface:/root/.cache/huggingface
     ports:
       - "30000:30000"
     command:
