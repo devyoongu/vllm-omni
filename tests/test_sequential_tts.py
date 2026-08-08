@@ -28,8 +28,8 @@ import httpx
 # 설정
 # ---------------------------------------------------------------------------
 
-SERVER = "http://172.31.79.202:30000"
-MODEL = "Qwen/Qwen3-TTS-12Hz-1.7B-Base"
+SERVER = "http://172.31.79.203:30000"
+MODEL = "Qwen/Qwen3-TTS-12Hz-0.6B-Base"
 VOICE_NAME = "femail_achernar"
 
 SAMPLE_RATE = 24_000
